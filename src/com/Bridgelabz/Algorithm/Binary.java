@@ -29,9 +29,8 @@ public class Binary {
 	        	System.out.print(swap[i]);
 	        }
 	        System.out.println();
-	        System.out.println("decimal number after swapping : ");
 	        double decimal=utility.toDecimal(swap);
-	        System.out.print("decimal number ="+decimal);
+	        System.out.println("decimal number after swapping :"+decimal);
 
 	}
 

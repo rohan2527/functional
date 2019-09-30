@@ -622,12 +622,14 @@ return temp;//return swaped number binarry number in an array
 	}
 	public double toDecimal(int[] bin) {
 double dec=0;
-
-for(int i=7,j=0;i>=0&&j<8;j++,i++)
+int j=0;
+for(int i=7;i>=0;i--)
 {
-	dec= dec+(bin[i]*Math.pow(2, j));
-	
-}
+	int base=(int) Math.pow(2, j);//taking power of 2  
+	dec=dec+bin[i]*base;
+j++;
+}	       
+
 		return dec;
 }
 }
