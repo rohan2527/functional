@@ -14,7 +14,6 @@ public class HarmonicNumber {
 		float n=sc.nextFloat();
 		float Hn=Utility.harmonicnumber(n);
 		System.out.println("nth harmonic number="+Hn);
-		System.out.println("nth harmonic number="+Hn);
 
 	}
 
