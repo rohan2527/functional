@@ -625,8 +625,8 @@ double dec=0;
 int j=0;
 for(int i=7;i>=0;i--)
 {
-	int base=(int) Math.pow(2, j);//taking power of 2  
-	dec=dec+bin[i]*base;
+	int base=(int) Math.pow(2, j);//taking power of 2 for each bit  
+	dec=dec+bin[i]*base; 		  // adding to get decimal number
 j++;
 }	       
 
