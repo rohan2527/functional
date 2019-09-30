@@ -1,4 +1,4 @@
-package Algorithm;
+package com.Bridgelabz.Algorithm;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

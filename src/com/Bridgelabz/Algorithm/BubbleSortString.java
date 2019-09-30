@@ -1,4 +1,4 @@
-package Algorithm;
+package com.Bridgelabz.Algorithm;
 
 import java.util.Scanner;
 
@@ -8,7 +8,7 @@ public class BubbleSortString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Utility u=new Utility();
+		Utility utility=new Utility();
 		Scanner sc=new Scanner(System.in);
 
 		System.out.println("enter number of words you want sort ");
@@ -23,7 +23,7 @@ String a[]=new String[n];
 }
 
 //int n = arr.length; 
-a=u.stringsort(a, n); 
+a=utility.stringsort(a, n); 
 System.out.println("Strings in sorted order are : "); 
 for (int i = 0; i < n; i++) 
     System.out.println("word "+(i + 1) + " is " + a[i]);

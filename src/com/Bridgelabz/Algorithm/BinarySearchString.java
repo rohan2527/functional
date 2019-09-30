@@ -1,4 +1,4 @@
-package Algorithm;
+package com.Bridgelabz.Algorithm;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class BinarySearchString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		Utility u=new Utility();
+		Utility utility=new Utility();
 		System.out.println("enter number of words=");
 	int n=sc.nextInt();
 	String[] s=new String[n];
@@ -22,7 +22,7 @@ public class BinarySearchString {
 		}
 		System.out.println("enter word you want to search=");
 		String c=sc.next();
-		if(u.binarysearchString(s,c))
+		if(utility.binarysearchString(s,c))
 		{
 			System.out.println("*word is found*");
 			}

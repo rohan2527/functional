@@ -1,10 +1,10 @@
-package Algorithm;
+package com.Bridgelabz.Algorithm;
 
 import java.util.Scanner;
 
 import Com.Bridgelabz.Utility.Utility;
 
-public class anagram {
+public class Anagram {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Utility {
-
+Scanner sc=new Scanner(System.in);
 	public static void flipcoin(int n) {
 		// TODO Auto-generated method stub
 		float head=0,tail=0;
@@ -437,24 +437,200 @@ char temp=c[i];
 	public String[] insertionsortstring(String[] a) {
 		// TODO Auto-generated method stub
 		int n=a.length;
-		for(int i=1;i<n;i++)
-		{
-		String value=a[i];
-		int hole=i;
-		int comp=a[hole-1].compareTo(value);
-		while(hole>i&&comp>0);
-		{
-			a[hole]=a[hole-1];
-			hole=hole-1;
-			comp=a[hole].compareTo(value);
-
-		}
-		a[hole]=value;
-		}
+//		for(int i=1;i<n;i++)
+//		{
+//		String value=a[i];
+//		int hole=i;
+//		while(hole>0&&a[hole-1].compareTo(value)>=0);
+//		{
+//				a[hole]=a[hole-1];
+//			    hole=hole-1;
+//		}
+//		a[hole]=value;
+//		}
+		 for (int j = 1; j<n; j++) {
+		       String key = a[j];
+		        int i = j - 1;
+		        while (i >= 0) 
+		        {
+		            if (key.compareTo(a[i]) < 0) 
+		            {
+		                break;
+		            }
+		            a[i + 1] = a[i];
+		            i--;
+		        }
+		        a[i + 1] = key;
+		 }
 		return a;
 	}
 
-}	
+
+	public int[] mergesort(int[] a,int l, int h) {
+		// TODO Auto-generated method stub
+		if(l<h)
+		{
+			int mid=(l+h)/2;
+			mergesort(a,l,mid);
+			mergesort(a,mid+1,h);
+		a=merge(a,l,mid,h);
+			}
+		return a;
+	}
+	public int[] merge(int[] a,int l,int m,int h)
+	{
+		int n1=m-l+1;
+		int n2=h-m;
+		int[] Left=new int[n1];
+		int[] Right=new int[n2];
+		for(int i=0;i<n1;i++)
+		{
+		Left[i]=a[l+i];
+		}
+		for(int j=0;j<n2;j++)
+		{
+		Right[j]=a[m+1+j];	
+		}
+		int i=0;
+		int j=0;
+		int k=l;
+		while(i<n1&&j<n2)
+		{
+		if(Left[i]<=Right[j])
+		{
+			a[k]=Left[i];
+			i++;
+		}
+		else
+		{
+			a[k]=Right[j];
+		j++;
+		}
+		k++;
+		}
+		while(i<n1)
+		{
+			a[k]=Left[i];
+			i++;
+			k++;
+		}
+		while(j<n2)
+		{
+			a[k]=Right[j];
+			j++;
+			k++;
+		}
+		
+		return a;
+		
+	}
+
+
+	public void vendingmachine(int input) {
+		// TODO Auto-generated method stub
+		int[] notes= {1,2,5,10,50,100,500,1000};
+		int n=notes.length;
+		int total=0;         //count for total number of notes
+		for(int i=n-1;i>=0;i--)
+			//starting from largest note to smallest note
+		{	
+			int note=0;      //count for individual notes
+			while(notes[i]<=input) //check for largest note required
+			{
+				input=input-notes[i]; //reducing note amount from total amount
+				note++;
+				total++;
+			}
+			if(note>0)
+			{//gives note count if used
+			System.out.println(+note+" notes of "+notes[i]);
+			}
+		}
+		System.out.println("total "+total+" notes");
+
+		
+	}
+
+
+	public int dayofweek(int d, int m, int y) {
+		// TODO Auto-generated method stub
+		int y1=y-(14-m)/12;
+		int x=y1+y1/4-y1/100+y1/400;
+		int m1=m+12*((14-m)/12)-2;
+		int d1=(int) ((d+x+(31*m1)/12)%7);
+		return d1;
+	}
+
+
+	public static void temp(int a) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		if(a==1)
+		{
+		//	(°C × 9/5) + 32 = °F
+		System.out.println("enter temperature in  °C");
+		float c=sc.nextFloat();
+		System.out.println((c*9/5)+32+"°F");
+		}
+		if (a==2)
+		{
+		System.out.println("enter temperature in  °F");
+		float f=sc.nextFloat();
+		//(°F − 32) x 5/9 = °C
+		System.out.println((f-32)*5/9+"°C");
+		}
+		if(a>2)
+			System.out.println("invalid number");
+
+	}
+
+
+	public static double loan(double p, double y, double r) {
+		// TODO Auto-generated method stub
+		double n=12*y;
+		double R=r/(12*100);
+		double mp=(p*R)/(1-Math.pow(1+R,-n));
+		return mp;
+	}
+
+
+	public static int[] toBinary(int n) {
+		// TODO Auto-generated method stub
+		int  bin[]=new int[8],i = 0;    
+		while(n>0)     
+		{ 					//converting decimal to binary 
+			bin[i++] = n%2; //storing it into arrya 
+		       n = n/2;
+	 		}
+		return bin;	
+		}
+	public static int[] swapNibbles(int[] bin) {
+int[] temp=new int[8];
+int j=0;
+//swaping binary digits
+for(int i=3;i>=0;i--)//taking first four binary numbers in reverse order
+{					 //storing in temp array
+	temp[j]=bin[i];
+	j++;
+}
+for(int i=7;i>=4;i--)//taking last four binary numbers in reverse order
+{					 //storing in temp array
+	temp[j]=bin[i];
+	j++;
+}
+return temp;//return swaped number binarry number in an array
+	}
+	public double toDecimal(int[] bin) {
+double dec=0;
+int j=0;
+for(int i=7;i>=0;i++)
+{
+	dec= dec+(bin[i]*Math.pow(2, j));
+j++;
+}
+		return dec;
+}
+}
 
 
 

@@ -20,8 +20,8 @@ public class CouponNumber {
 System.out.println("enter coupon numbers");
 Scanner sc=new Scanner(System.in);
 int n=sc.nextInt();
-Utility u=new Utility();
-int c=u.coupon(n);
+Utility utility=new Utility();
+int c=utility.coupon(n);
 System.out.println(c);
 
 	}

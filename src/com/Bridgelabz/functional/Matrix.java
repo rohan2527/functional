@@ -9,7 +9,7 @@ public class Matrix {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	    Scanner scan = new Scanner(System.in);
-        Utility u=new Utility();
+        Utility utility=new Utility();
         System.out.println("Enter The Number Of Matrix Rows");
          
         int a = scan.nextInt();
@@ -21,9 +21,9 @@ public class Matrix {
         //defining 2D array to hold matrix data
         int[][] matrix = new int[a][b];
         // Enter Matrix Data
-        u.enterMatrixData(scan, matrix, a, b);
+        utility.enterMatrixData(scan, matrix, a, b);
         
         // Print Matrix Data
-        u.printMatrix(matrix, a, b);	}
+        utility.printMatrix(matrix, a, b);	}
 
 }

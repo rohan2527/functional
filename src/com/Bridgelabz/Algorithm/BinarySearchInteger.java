@@ -1,4 +1,4 @@
-package Algorithm;
+package com.Bridgelabz.Algorithm;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class BinarySearchInteger {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		Utility u=new Utility();
+		Utility utility=new Utility();
 		System.out.println("enter length of list=");
 int n=sc.nextInt();
 		int[] a=new int[n];
@@ -21,7 +21,7 @@ int n=sc.nextInt();
 //		a=u.bubblesort(a);
 		System.out.println("enter number you want to search=");
 		int number=sc.nextInt();
-		if(u.binarysearch(a,number))
+		if(utility.binarysearch(a,number))
 		{
 			System.out.println("*number is found*");
 		}

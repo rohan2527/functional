@@ -1,4 +1,4 @@
-package Algorithm;
+package com.Bridgelabz.Algorithm;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class BubbleSortint {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		Utility u=new Utility();
+		Utility utility=new Utility();
 		System.out.println("enter length of list=");
 		int n=sc.nextInt();
 		int[] a=new int[n];
@@ -18,7 +18,7 @@ public class BubbleSortint {
 	{
 		a[i]=sc.nextInt();
 	}
-	a=u.bubblesort(a);
+	a=utility.bubblesort(a);
 
 	for (int element: a) 
 		{
