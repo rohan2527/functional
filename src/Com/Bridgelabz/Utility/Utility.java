@@ -632,8 +632,45 @@ j++;
 
 		return dec;
 }
+
+
+	public void showInstruction(char[][] a2) {
+		// TODO Auto-generated method stub
+		char[][] a=new char [3][3];
+		int n=1;
+		System.out.println("player 1= X");
+		System.out.println("player 2= O");
+		System.out.println("enter number where you want to put mark");
+
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				System.out.print(a2[i][j]+" ");
+			}
+			System.out.println();
+
+		}
+	
 }
 
+
+	public void takeInput(char[][] a) {
+		// TODO Auto-generated method stub
+		System.out.println("enter number where you want to put mark");
+		int pos=sc.nextInt();
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				if(pos==a[i][j])
+				{
+					a[i][j]='x';
+				}
+			}
+		}showInstruction(a);
+	}
+}
 
 
 
