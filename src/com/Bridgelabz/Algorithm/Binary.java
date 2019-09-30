@@ -31,7 +31,7 @@ public class Binary {
 	        System.out.println();
 	        System.out.println("decimal number after swapping : ");
 	        double decimal=utility.toDecimal(swap);
-	        System.out.print(decimal);
+	        System.out.print("decimal number ="+decimal);
 
 	}
 
