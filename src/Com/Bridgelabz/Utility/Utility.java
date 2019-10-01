@@ -655,21 +655,32 @@ j++;
 }
 
 
-	public void takeInput(char[][] a) {
+	public char[][] takeInput(char[][] a, int player) {
 		// TODO Auto-generated method stub
+		
 		System.out.println("enter number where you want to put mark");
 		int pos=sc.nextInt();
+		
 		for(int i=0;i<3;i++)
 		{
 			for(int j=0;j<3;j++)
 			{
-				if(pos==a[i][j])
+				if(pos==a[i][j]&&player==-1)
 				{
 					a[i][j]='x';
 				}
+				if(pos==a[i][j]&&player==1)
+				{
+					a[i][j]='O';
+
+				}
+					
 			}
-		}showInstruction(a);
+		}
+		return a;
 	}
+
+
 }
 
 
